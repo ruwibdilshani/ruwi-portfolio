@@ -74,6 +74,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
   typeEffect();
 });
+
+/*click aniamtio*/
+document.addEventListener("click", (e) => {
+  const ripple = document.createElement("div");
+  ripple.classList.add("ripple");
+  document.body.appendChild(ripple);
+  ripple.style.left = `${e.clientX}px`;
+  ripple.style.top = `${e.clientY}px`;
+
+  setTimeout(() => {
+    ripple.remove();
+  }, 600);
+});
+
+/*mouse move aniamtio*/
+document.addEventListener("mousemove", (e) => {
+  const trail = document.createElement("div");
+  trail.classList.add("trail");
+  document.body.appendChild(trail);
+  trail.style.left = `${e.clientX}px`;
+  trail.style.top = `${e.clientY}px`;
+
+  setTimeout(() => {
+    trail.remove();
+  }, 500);
+});
+
 /**
  * skills toggle
  */

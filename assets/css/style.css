@@ -82,9 +82,10 @@ body.dark_theme {
   --color-secondary: hsl(0, 0%, 62%);
   --card-shadow: hsla(0, 0%, 0%, 0.4);
   --input-bg: hsl(0, 0%, 16%);
-
   --shadow-1: 10px 10px 40px var(--card-shadow);
-
+  .trail{
+    background: hsl(0, 0%, 100%);
+  }
 }
 
 body.light_theme {
@@ -95,10 +96,58 @@ body.light_theme {
   --color-secondary: hsl(0, 0%, 37%);
   --card-shadow: hsla(0, 0%, 0%, 0.1);
   --input-bg: hsl(0, 0%, 93%);
-
   --shadow-1: 10px 10px 40px var(--card-shadow);
-
+  .trail{
+    background: hsl(0, 0%, 18%);
+  }
+  .ripple{
+    background: hsla(0, 0%, 24%, 0.637);
+  }
 }
+
+/*Cursor click anima*/
+.ripple {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  animation: rippleEffect 0.6s linear;
+}
+
+@keyframes rippleEffect {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(5);
+    opacity: 0;
+  }
+}
+
+
+/*Particle Animations*/
+.trail {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: hsl(0, 0%, 100%);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.7;
+  animation: fadeOut 0.5s linear forwards;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(2); }
+}
+
+
+
 
 
 
@@ -290,6 +339,7 @@ body.active { overflow: hidden; }
   width: 100%;
   transition: var(--transition-1);
   z-index: 4;
+ 
 }
 
 .header.active {
