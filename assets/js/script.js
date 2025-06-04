@@ -176,3 +176,14 @@ if (localStorage.getItem("theme") === "light_theme") {
   document.body.classList.add("dark_theme");
 }
 
+function showImage(src) {
+  const modal = document.getElementById("imgModal");
+  const modalImg = document.getElementById("modalImg");
+
+  modal.style.display = "block";
+  modalImg.src = src;
+}
+
+function hideImage() {
+  document.getElementById("imgModal").style.display = "none";
+}
