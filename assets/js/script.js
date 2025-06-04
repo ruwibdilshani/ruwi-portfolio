@@ -179,11 +179,21 @@ if (localStorage.getItem("theme") === "light_theme") {
 function showImage(src) {
   const modal = document.getElementById("imgModal");
   const modalImg = document.getElementById("modalImg");
-
-  modal.style.display = "block";
   modalImg.src = src;
+  modal.style.display = "block";
+
+  // Smooth scroll to modal
+  modal.scrollIntoView({ behavior: "smooth" });
 }
 
 function hideImage() {
-  document.getElementById("imgModal").style.display = "none";
+  const modal = document.getElementById("imgModal");
+  modal.style.display = "none";
 }
+
+// Optional: Close modal on pressing ESC
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    hideImage();
+  }
+});
