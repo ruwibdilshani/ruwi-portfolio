@@ -355,7 +355,46 @@
           </ul>
         </section>
 
+        <!--
+                - #MY Certificates
+              -->
 
+        <section class="stats section" id="stats">
+          <h2 class="h3 section-title">MY Certificates</h2>
+
+          <p class="section-text">
+            Certificates that showcase my skills and knowledge in the field of
+            software engineering.
+          </p>
+
+          <ul class="stats-list">
+            <li>
+              <a
+                      href="#"
+                      class="stats-card"
+                      onclick="showImage('./uom web r.png')"
+              >
+                <div class="certificate-icon">
+                  <img src="./uom web r.png" alt="Badge icon" />
+                </div>
+
+                <h2 class="card-title">
+                  University of Moratuwa-Sri Lanka
+                  <strong
+                  >" I completed online learning programme in Web Design for
+                    Beginners "</strong
+                  >
+                </h2>
+              </a>
+            </li>
+
+            <!-- Modal for enlarged image -->
+            <div id="imgModal" class="modal" onclick="hideImage()">
+              <span class="close">&times;</span>
+              <img class="modal-content" id="modalImg" />
+            </div>
+          </ul>
+        </section>
 
         <!--
         - #SKILLS
